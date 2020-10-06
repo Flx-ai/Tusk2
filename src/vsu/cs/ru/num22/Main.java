@@ -5,15 +5,16 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int a = enterNumber('a');
-        int b = enterNumber('b');
-        int c = enterNumber('c');
+        int a = readValue('a');
+        int b = readValue('b');
+        int c = readValue('c');
         compareNumbers(a, b, c);
+
     }
 
-    static int enterNumber(char name) {
+    static int readValue(char name) {
         Scanner num = new Scanner(System.in);
-        System.out.printf("enter the number %s: ", name);
+        System.out.printf("enter the number %s: ", name, " ");
         return num.nextInt();
     }
 
