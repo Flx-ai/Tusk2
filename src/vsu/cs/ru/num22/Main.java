@@ -32,7 +32,7 @@ public class Main {
         else {
             max = b; min = a;
         }
-        // Решена задача без библиотеки Math
+                                                                   // Решена задача без библиотеки Math
         if (c>max) max = c;
 
         if (c<min) min = c;
