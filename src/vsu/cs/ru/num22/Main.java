@@ -9,7 +9,6 @@ public class Main {
         int b = readValue('b');
         int c = readValue('c');
         compareNumbers(a, b, c);
-
     }
 
     static int readValue(char name) {
@@ -19,27 +18,28 @@ public class Main {
     }
 
     static void compareNumbers(int a, int b, int c) {
-       /* int min = Math.min(Math.min(a, b),c);
-        int max = Math.max(Math.max(a, b),c);                       Решена задача с использованием библиотеки Math
-        int sr = a + b + c - max - min;
-        System.out.println("Результат: " + min + " <= " + sr + " <= " + max);
-        */
+        int max, min;
 
-        int min, max, medium;
-
-        if (a>b) {
-            max = a; min = b;
+        if (a > b) {
+            max = a;  min = b;
         }
         else {
             max = b; min = a;
         }
-                                                                    // Решена задача без библиотеки Math
-        if (c>max) max = c;
 
-        if (c<min) min = c;
+        if (c > max) max = c;
 
-        medium = a + b + c - max - min;
+        if (c < min) min = c;
+
+        int medium = calcMedium(a, b, c, max, min);
+        printResult(max, min, medium);
+    }
+
+    static int calcMedium(int a, int b, int c, int max, int min) {
+        return a + b + c - max - min;
+    }
+
+    static void printResult(int max, int min, int medium) {
         System.out.println("Результат: " + min +" <= "+ medium +" <= " + max);
     }
 }
-
